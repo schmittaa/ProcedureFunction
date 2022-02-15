@@ -1,0 +1,29 @@
+ALGORITHM DotProduct
+VAR
+    tab1, tab2  : ARRAY_OF INTEGER;
+BEGIN
+
+FUNCTION Vecteur(table1,table2 ARRAY_OF) : INTEGER
+        VAR
+        somme,i : INTEGER;
+        somme:=0;
+        BEGIN
+            FOR i FROM 0 TO table1.length-1    DO
+                somme:=somme + table1[i]*table2[i]
+            END_FOR
+          
+            RETURN somme
+            
+        END
+IF (tab1.length=tab2.length) THEN
+  IF (Vecteur(tab1,tab2)=0) THEN
+    write("Les vecteurs sont orthogonaux");
+    ELSE 
+    write("Les vecteurs ne sont pas orthogonaux");
+    END.
+    ELSE
+        write("Les tableaux ne sont pas de la même logueur")
+END_IF
+   
+
+END

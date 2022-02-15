@@ -1,0 +1,29 @@
+ALGORITHM DotProduct
+VAR
+    tab1, tab2  : ARRAY_OF INTEGER;
+    somme : INTEGER;
+    somme:=0;
+BEGIN
+
+PROCEDURE  Vecteur(table1,table2, var somme) //reference pour utiliser la dernière value
+        VAR
+        i: INTEGER;
+        BEGIN
+            FOR i FROM 0 TO table1.length-1    DO
+                somme:=somme + table1[i]*table2[i]
+            END_FOR
+END
+    IF (table1.length=table2.length) THEN
+
+        Vecteur(tab1,tab2,somme)//appel procedure pour maj somme
+
+        IF (somme=0) THEN
+        write("Les vecteurs sont orthonomés");
+        ELSE
+        write("Les vecteurs ne sont pas orthonomés");
+        END_IF
+    ELSE
+    write("Les tableaux ne sont pas de la même logueur")
+    END_IF
+
+END
